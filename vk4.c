@@ -45,7 +45,3 @@ int main(int argc, char **argv)
   else printf("first index is %d\n", s);
   return 0;
 }
-
-
-
-
