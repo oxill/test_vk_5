@@ -4,16 +4,14 @@ CFLAGS =
 
 SOURCES = vk5.c
 
-OBJECTS = $(SOURCES:.cpp = .o)
+OBJECTS = $(SOURCES:.c = .o)
 
 EXECUTABLE = vk5
 
-all: $(SOURCES) $(EXECUTABLE)
+#all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@	 
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@
 	
 clean:
-	$(RM) -f *.o
-	$(RM) -f main
-	
+	rm -rf *.o $(EXECUTABLE)
