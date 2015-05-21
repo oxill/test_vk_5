@@ -1,20 +1,26 @@
 #include <stdio.h>
 #define MAX_SIZE 9
+//#define DEBUG
+#ifdef DEBUG
+#define D(X) X;
+#else 
+#define D(X) ;
+#endif
 int bsearch(char *arr, int n)
 {
   int i, left = 0, right = MAX_SIZE, mid;
   while(left <= right)   
   {
     mid = left + (right - left) / 2;
-    printf("mid %d\n",mid);
+    D(printf("mid %d\n",mid));
     if(n < arr[mid]) {
       right = mid - 1;
-      printf("right %d\n",right);     
+      D(printf("right %d\n",right));
       if(right == -1) return -1;
     }
     else if(n > arr[mid]) {
       left = mid + 1;          
-      printf("left %d\n",left);
+      D(printf("left %d\n",left));
       if(left == MAX_SIZE+1) return -1;
     }        
     else {
